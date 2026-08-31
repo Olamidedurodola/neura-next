@@ -752,6 +752,8 @@ footer.site strong { color: #fff; }
   text-transform: none;
   color: rgba(255, 255, 255, 0.55);
 }
+.foot-meta p { margin: 0; }
+.foot-meta p + p { margin-top: 4px; }
 .foot-meta a { color: #c5e3cf; border: 0; }
 
 .developed-by {
