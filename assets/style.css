@@ -751,6 +751,7 @@ footer.site strong { color: #fff; }
   letter-spacing: 0;
   text-transform: none;
   color: rgba(255, 255, 255, 0.55);
+  text-align: center;
 }
 .foot-meta p { margin: 0; }
 .foot-meta p + p { margin-top: 4px; }
@@ -759,7 +760,7 @@ footer.site strong { color: #fff; }
 .developed-by {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 8px;
   padding: 16px var(--pad) 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
