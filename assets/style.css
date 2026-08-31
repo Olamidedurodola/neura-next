@@ -739,7 +739,7 @@ footer.site {
   font-size: 14px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.72);
-  text-align: center;
+  text-align: left;
 }
 .footer-notice p { max-width: none; margin: 0 0 12px; }
 .footer-notice p:last-child { margin-bottom: 0; }
@@ -754,8 +754,8 @@ footer.site strong { color: #fff; }
   color: rgba(255, 255, 255, 0.55);
   text-align: center;
 }
-.foot-meta p { margin: 0; }
-.foot-meta p + p { margin-top: 4px; }
+.foot-meta p { margin: 0 auto; }
+.foot-meta p + p { margin-top: 6px; }
 .foot-meta a { color: #c5e3cf; border: 0; }
 
 .developed-by {
