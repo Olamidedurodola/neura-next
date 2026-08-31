@@ -4,7 +4,6 @@
 (function () {
   "use strict";
 
-  // Mark the current nav item without hardcoding per page.
   var here = location.pathname.split("/").pop() || "index.html";
   var feedPages = {
     "feed.html": true,
@@ -24,8 +23,16 @@
     }
   }
 
-  // Inquiry form: if no form endpoint is configured, fall back to mailto so the
-  // page never silently loses a submission.
+  var header = document.querySelector("header.site-header, header.masthead");
+  var toggle = document.querySelector(".menu-toggle");
+  if (header && toggle) {
+    toggle.addEventListener("click", function () {
+      var open = header.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    });
+  }
+
   var form = document.querySelector("form.inquiry");
   if (!form) return;
 
