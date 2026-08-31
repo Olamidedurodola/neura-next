@@ -739,6 +739,7 @@ footer.site {
   font-size: 14px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.72);
+  text-align: center;
 }
 .footer-notice p { max-width: none; margin: 0 0 12px; }
 .footer-notice p:last-child { margin-bottom: 0; }
