@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NeuraNext">
+  <rect width="64" height="64" rx="14" fill="#1E4A38"/>
+  <path fill="#E8F3EC" d="M18 46V18h8.2l9.6 16.8V18H44v28h-8.2L26.2 29.2V46H18z"/>
+  <path fill="#7CB892" d="M33.2 14.2c0 0 6.4-2.8 11.2 1.6 3.6 3.3 3.2 8.4 1.1 11.2-2.4-3.8-6.6-6.2-12.3-6.8V14.2z"/>
+  <circle cx="44.8" cy="16.8" r="3.2" fill="#C5E3CF"/>
+</svg>

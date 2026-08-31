@@ -3,7 +3,10 @@ import os
 import re
 
 pages = sorted(glob.glob("*.html"))
-files = set(os.listdir(".")) | {"assets/style.css", "assets/site.js"}
+files = set(os.listdir("."))
+for root, dirs, names in os.walk("assets"):
+    for n in names:
+        files.add(os.path.join(root, n).replace("\\", "/"))
 
 # Claim language. Each pattern is written so that a denial ("no claim that it prevents...",
 # "not available for sale") does not trip it; only an affirmative claim does.
@@ -34,8 +37,8 @@ def negated(text, start):
     return re.search(NEGATORS + r"\b[^.]*$", window) is not None
 
 required = [
-    ("stage-banner", "stage banner"),
-    ('footer class="site"', "footer notice"),
+    ("footer-notice", "footer notice"),
+    ('footer class="site"', "footer"),
     ("regulatory.html", "regulatory link"),
     ("assets/style.css", "stylesheet"),
     ("assets/site.js", "script"),
