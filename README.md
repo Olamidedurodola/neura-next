@@ -89,22 +89,32 @@ Either way, keep a copy of every submission. The enquiry log is the evidence, no
 
 ## 4. Deploy
 
-Any static host works. Two easy paths:
+Any static host works. The live domain is **`neuranextsolutions.com`**.
+
+**Vercel (recommended)**
+1. Sign in at vercel.com and import this repository.
+2. Leave the framework preset as **Other** — there is no build step; the site root is the deploy root.
+3. Deploy. Vercel serves `index.html`, `sitemap.xml`, `robots.txt`, and the `assets/` folder as static files.
+4. Project → **Settings → Domains** → add `neuranextsolutions.com` and `www.neuranextsolutions.com`.
+5. At your domain registrar, add the DNS records Vercel shows:
+   - **Apex** (`neuranextsolutions.com`): `A` → `76.76.21.21`
+   - **www**: `CNAME` → `cname.vercel-dns.com`
+6. Wait for Vercel to issue the SSL certificate (usually a few minutes after DNS propagates).
 
 **Netlify (drag and drop)**
 1. Sign in at netlify.com.
-2. Drag the `website` folder onto the deploy area.
-3. Add your custom domain under Domain settings.
+2. Drag the site folder onto the deploy area.
+3. Add `neuranextsolutions.com` under Domain settings.
 
 **GitHub Pages**
-1. Create a repository and push the contents of `website/` to the root of the `main` branch.
+1. Push this repository to GitHub with the site at the repo root.
 2. Settings → Pages → Source: `main`, folder `/root`.
-3. Add your custom domain and enable HTTPS.
+3. Add `neuranextsolutions.com` as the custom domain and enable HTTPS.
+4. Add a `CNAME` file at the repo root containing `neuranextsolutions.com`.
 
-**Domain and email.** The intended public domain is `neura-next.com` (already registered to
-NeuraNext Solutions LLC). Point DNS to the static host and enable HTTPS. Set up a matching
-email address on that domain. A `netlify.app` address undercuts the credibility the site is
-meant to establish.
+**Domain and email.** Point DNS to the static host and enable HTTPS. Set up a matching email
+address on the domain (`research@neuranextsolutions.com`). A default `*.vercel.app` address
+undercuts the credibility the site is meant to establish.
 
 The company and the website are one. The site has two program arms. For the I-140, the
 **proposed endeavor is only the feed program.** Exhibit 4.21 should lead with the feed pages
@@ -169,7 +179,7 @@ Do this in the week you file, after the placeholders are filled and the site is 
    `4.21d_scientific_basis.pdf`, `4.21e_regulatory_posture.pdf`, `4.21f_participation.pdf`,
    `4.21g_neurotechnology.pdf`, `4.21h_about.pdf`.
 5. Export the enquiry log to `4.21i_inquiry_log.pdf`.
-6. Add a one-page cover sheet stating the domain (`neura-next.com`), the date of capture, the date
+6. Add a one-page cover sheet stating the domain (`neuranextsolutions.com`), the date of capture, the date
    the site was first published, that NeuraNext Solutions LLC is the operating entity, and that the
    proposed NIW endeavor is the feed program.
 
