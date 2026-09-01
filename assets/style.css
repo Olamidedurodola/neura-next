@@ -292,7 +292,7 @@ h1 {
   color: inherit;
 }
 
-.hero h1 { max-width: 22ch; }
+.hero h1 { max-width: 28ch; }
 .page-hero h1 { max-width: 28ch; font-size: clamp(30px, 3.8vw, 46px); }
 
 h1 em, h2 em { font-style: italic; font-weight: 500; }
