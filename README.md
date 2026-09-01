@@ -73,17 +73,11 @@ conflict-of-interest read and an employer problem.
 
 ## 3. Enquiry form
 
-The form posts to whatever URL is in the `action` attribute. Until you set one, `assets/site.js`
-detects the unconfigured placeholder and falls back to opening a pre-filled email, so no enquiry is
-ever silently lost.
+The **Work with us** form posts to FormSubmit and delivers submissions to
+`research@neuranextsolutions.com`. The first submission triggers a one-time activation email
+to that address — click the link to enable delivery.
 
-Two straightforward options:
-
-- **Netlify Forms** — deploy on Netlify, add `netlify` as an attribute on the `<form>` tag, and
-  submissions appear in your dashboard. No endpoint URL needed.
-- **Formspree** — create a form, paste the endpoint into `action`.
-
-Either way, keep a copy of every submission. The enquiry log is the evidence, not the form.
+Keep a copy of every submission. The enquiry log is the evidence, not the form.
 
 ---
 

@@ -183,9 +183,17 @@
     this form; a confidentiality agreement can be put in place first.
   </p>
 
-  <!-- To activate: replace the action attribute with your form endpoint (e.g. Formspree,
-       Netlify Forms). Until then, site.js falls back to a mailto: submission. -->
-  <form class="inquiry" action="" method="POST">
+  <!-- Submissions are sent to research@neuranextsolutions.com via FormSubmit. -->
+  <form class="inquiry" action="https://formsubmit.co/research@neuranextsolutions.com" method="POST">
+    <input type="hidden" name="_subject" value="Program inquiry via NeuraNext website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <p class="form-status form-status--success" id="inquiry-success" hidden>
+      Thank you. Your message has been sent to research@neuranextsolutions.com. We will respond
+      shortly.
+    </p>
+    <p class="form-status form-status--error" id="inquiry-error" hidden></p>
 
     <div class="field">
       <label for="name">Name <span class="hint">*</span></label>
