@@ -13,7 +13,7 @@ website/
   science.html        Scientific Basis
   regulatory.html     Regulatory Posture (feed)
   participate.html    Producers & Researchers (enquiry form)
-  neuro.html          Neurotechnology research line (early-stage)
+  neuro.html          Exploratory neurotechnology research (not current commercial focus)
   about.html          About the principal
   assets/style.css
   assets/site.js
@@ -116,11 +116,13 @@ Any static host works. The live domain is **`neuranextsolutions.com`**.
 address on the domain (`research@neuranextsolutions.com`). A default `*.vercel.app` address
 undercuts the credibility the site is meant to establish.
 
-The company and the website are one. The site has two program arms. For the I-140, the
-**proposed endeavor is only the feed program.** Exhibit 4.21 should lead with the feed pages
-(`feed.html`, `status.html`, `science.html`, `regulatory.html`, `participate.html`) plus the
-company home so the officer sees the entity. The neurotechnology page must stay early-stage
-and claim-free so it identifies the second arm without becoming a second NIW endeavor.
+The company and the website are one. The site is built around the feed program as the primary
+endeavor, with exploratory neurotechnology concepts described separately at a lower level of
+prominence. For the I-140, the **proposed endeavor is only the feed program.** Exhibit 4.21
+should lead with the feed pages (`feed.html`, `status.html`, `science.html`, `regulatory.html`,
+`participate.html`) plus the company home so the officer sees the entity. The exploratory
+research page must stay early-stage and claim-free so it acknowledges prior work without
+becoming a second NIW endeavor.
 
 ---
 
