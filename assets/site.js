@@ -35,40 +35,63 @@
 
   var form = document.querySelector("form.inquiry");
   if (form) {
-    var action = form.getAttribute("action") || "";
-    var unconfigured = action === "" || action.indexOf("REPLACE_WITH") !== -1;
-    if (unconfigured) {
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
+    var successEl = document.getElementById("inquiry-success");
+    var errorEl = document.getElementById("inquiry-error");
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var endpoint = form.getAttribute("action") || "";
 
-        var contact = document.getElementById("contact-email");
-        var to = contact ? contact.textContent.trim() : "";
-        if (!to) return;
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-        var get = function (id) {
-          var el = document.getElementById(id);
-          return el ? el.value.trim() : "";
-        };
+      if (successEl) successEl.hidden = true;
+      if (errorEl) errorEl.hidden = true;
 
-        var body = [
-          "Name: " + get("name"),
-          "Organization: " + get("organization"),
-          "Role: " + get("role"),
-          "State: " + get("state"),
-          "Email: " + get("email"),
-          "Interest: " + get("interest"),
-          "",
-          "Message:",
-          get("message")
-        ].join("\n");
+      var get = function (id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : "";
+      };
 
-        var subject = "Program inquiry: " + (get("interest") || "general");
-        window.location.href =
-          "mailto:" + to +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
-      });
-    }
+      var interest = get("interest") || "general";
+      var originalText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+
+      var payload = new FormData(form);
+      payload.set("_subject", "Program inquiry: " + interest);
+      payload.set("_replyto", get("email"));
+
+      fetch(endpoint.replace(/^https:\/\/formsubmit\.co\//, "https://formsubmit.co/ajax/"), {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: payload
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Submission failed");
+          return res.json();
+        })
+        .then(function () {
+          form.reset();
+          if (successEl) {
+            successEl.hidden = false;
+            successEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        })
+        .catch(function () {
+          if (errorEl) {
+            errorEl.textContent =
+              "Something went wrong. Please write directly to research@neuranextsolutions.com.";
+            errorEl.hidden = false;
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+        });
+    });
   }
 
   var WEB3FORMS_ACCESS_KEY = "6b408c0a-c86d-4ea9-bfab-52aca6d54205";
