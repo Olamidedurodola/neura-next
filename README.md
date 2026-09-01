@@ -1,13 +1,13 @@
 # Program website — build, deploy, and Exhibit 4.21 capture
 
 Static site. No build step, no dependencies, no trackers. Company home, feed-program pages,
-one neurotechnology page, plus one stylesheet and one small script. It is written to serve two
+one exploratory-research page, plus one stylesheet and one small script. It is written to serve two
 purposes at once: the public face of NeuraNext Solutions LLC, and **Exhibit 4.21** in the I-140
 petition. The NIW proposed endeavor is the feed program only.
 
 ```
 website/
-  index.html          Company (two programs)
+  index.html          Company home (feed program primary)
   feed.html           Feed program — The Endeavor
   status.html         Development Status  ← the evidentiary core
   science.html        Scientific Basis
