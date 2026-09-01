@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neura-next.com/sitemap.xml
+Sitemap: https://neuranextsolutions.com/sitemap.xml
